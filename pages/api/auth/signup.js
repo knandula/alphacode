@@ -24,6 +24,7 @@ async function handler(req, res) {
   }
 
   const client = await connectToDatabase();
+  debugger;
 
   const db = client.db();
 

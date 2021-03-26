@@ -40,14 +40,14 @@ function AuthForm() {
     const enteredPassword = passwordInputRef.current.value;
 
     // optional: Add validation
-
+ 
     if (isLogin) {
       const result = await signIn('credentials', {
         redirect: false,
         email: enteredEmail,
         password: enteredPassword,
       });
-
+      debugger;
       if (!result.error) {
         // set some auth state
         router.replace('/profile');
@@ -57,6 +57,7 @@ function AuthForm() {
         const result = await createUser(enteredEmail, enteredPassword);
         console.log(result);
       } catch (error) {
+        debugger;
         console.log(error);
       }
     }
